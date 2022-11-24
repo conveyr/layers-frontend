@@ -7,6 +7,11 @@ import 'sanitize.css/forms.css';
 import 'sanitize.css/assets.css';
 import './theme/global.css';
 import './theme/theme.css'
+import '@fontsource/roboto/300.css';
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/500.css';
+import '@fontsource/roboto/700.css';
+
 
 const root = ReactDOM.createRoot(document.querySelector('#root') as HTMLElement);
 root.render(
