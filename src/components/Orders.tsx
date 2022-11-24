@@ -59,9 +59,8 @@ function preventDefault(event: React.MouseEvent) {
   event.preventDefault();
 }
 
-export default function Orders() {
-  return (
-    <React.Fragment>
+const Orders = () => (
+    <>
       <Title>Recent Orders</Title>
       <Table size="small">
         <TableHead>
@@ -85,9 +84,11 @@ export default function Orders() {
           ))}
         </TableBody>
       </Table>
+      {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
       <Link color="primary" href="#" onClick={preventDefault} sx={{ mt: 3 }}>
         See more orders
       </Link>
-    </React.Fragment>
-  );
-}
+    </>
+  )
+
+export default Orders

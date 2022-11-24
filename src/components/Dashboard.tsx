@@ -3,7 +3,7 @@ import { styled, createTheme, ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import MuiDrawer from '@mui/material/Drawer';
 import Box from '@mui/material/Box';
-import MuiAppBar, { AppBarProps as MuiAppBarProps } from '@mui/material/AppBar';
+import MuiAppBar, { AppBarProps as MuiAppBarProperties } from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import List from '@mui/material/List';
 import Typography from '@mui/material/Typography';
@@ -22,28 +22,27 @@ import Chart from './Chart';
 import Deposits from './Deposits';
 import Orders from './Orders';
 
-function Copyright(props: any) {
-  return (
+const Copyright = (props: any) => (
+    // eslint-disable-next-line react/jsx-props-no-spreading
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
       {'Copyright © '}
       <Link color="inherit" href="https://mui.com/">
         Your Website
       </Link>{' '}
       {new Date().getFullYear()}
-      {'.'}
+      .
     </Typography>
-  );
-}
+  )
 
-const drawerWidth: number = 240;
+const drawerWidth = 240;
 
-interface AppBarProps extends MuiAppBarProps {
+interface AppBarProperties extends MuiAppBarProperties {
   open?: boolean;
 }
 
 const AppBar = styled(MuiAppBar, {
-  shouldForwardProp: (prop) => prop !== 'open',
-})<AppBarProps>(({ theme, open }) => ({
+  shouldForwardProp: (property) => property !== 'open',
+})<AppBarProperties>(({ theme, open }) => ({
   zIndex: theme.zIndex.drawer + 1,
   transition: theme.transitions.create(['width', 'margin'], {
     easing: theme.transitions.easing.sharp,
@@ -59,7 +58,7 @@ const AppBar = styled(MuiAppBar, {
   }),
 }));
 
-const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' })(
+const Drawer = styled(MuiDrawer, { shouldForwardProp: (property) => property !== 'open' })(
   ({ theme, open }) => ({
     '& .MuiDrawer-paper': {
       position: 'relative',
@@ -87,7 +86,7 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 
 const mdTheme = createTheme();
 
-function DashboardContent() {
+const DashboardContent = () => {
   const [open, setOpen] = React.useState(true);
   const toggleDrawer = () => {
     setOpen(!open);
@@ -207,6 +206,6 @@ function DashboardContent() {
   );
 }
 
-export default function Dashboard() {
-  return <DashboardContent />;
-}
+const Dashboard = () => <DashboardContent />
+
+export default Dashboard;
