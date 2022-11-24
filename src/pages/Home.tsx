@@ -1,6 +1,6 @@
 import React from 'react';
-import Todo from '../components/Todo/Todo';
+import Dashboard from "../components/Dashboard";
 
-const Home = () => <Todo />;
+const Home = () => <Dashboard />;
 
 export default Home;
